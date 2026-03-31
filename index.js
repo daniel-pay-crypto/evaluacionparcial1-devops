@@ -12,3 +12,6 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
+
+
+// Comentarioo: Esta es la nueva funcionalidad agregada por Daniel Leyton
