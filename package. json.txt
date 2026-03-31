@@ -1,0 +1,13 @@
+{
+  "name": "microservicio-dummy",
+  "version": "1.0.0",
+  "description": "Microservicio base para evaluación DevOps",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Simulando pruebas unitarias... ¡Todo en verde!\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
