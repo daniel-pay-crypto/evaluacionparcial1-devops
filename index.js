@@ -9,6 +9,11 @@ app.get('/', (req, res) => {
   });
 });
 
+
+app.get('/info', (req, res) => {
+  res.json({ version: '1.0.0', autor: 'Equipo DevOps' });
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
