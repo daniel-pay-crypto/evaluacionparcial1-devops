@@ -9,6 +9,11 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/ping', (req, res) => {
+  res.send('pong');
+});
+
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
