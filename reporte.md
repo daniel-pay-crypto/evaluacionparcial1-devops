@@ -17,7 +17,6 @@ Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio
 2. Bloqueos seguridad needs
 3. Deploy automático
 4. Coverage equivalente JaCoCo
-5. Dependabot configurado
 
 ---
 
@@ -104,7 +103,7 @@ npm test -- --coverage
 | IE4 | Deploy automático | ⚠️ MEJORA PENDIENTE |
 | IE2 | Tecnología detectada | ✅ IMPLEMENTADO |
 | IE2 | Coverage equivalente JaCoCo | ⚠️ MEJORA PENDIENTE |
-| IE3 | Dependabot configurado | ⚠️ MEJORA PENDIENTE |
+| IE3 | Dependabot configurado | ✅ IMPLEMENTADO |
 | IE5 | Docker Compose/K8s | ✅ IMPLEMENTADO |
 | IE5 | Múltiples servicios | ✅ IMPLEMENTADO |
 | IE5 | Healthchecks | ✅ IMPLEMENTADO |
@@ -258,15 +257,13 @@ Keywords:
 
 ### IE3 - Dependabot configurado
 
-- Estado: ⚠️ MEJORA PENDIENTE
-- Detalle: Dependabot no detectado
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Dependabot encontrado
 
 - Evidencia:
 ```
 .github/dependabot.yml
 ```
-
-- Qué falta: Agregar dependabot.yml
 
 
 ### IE5 - Docker Compose/K8s
