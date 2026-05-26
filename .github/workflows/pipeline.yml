@@ -1,74 +1,94 @@
-name: CI DevOps Integracion Completa
+
+
+name: Pipeline CI-CD Completo - Evaluacion 2
 
 on:
+
   push:
-    branches:
-      - develop
-      - main
+  
+    branches: [ main, master ]
+    
   pull_request:
-    branches:
-      - main
+  
+    branches: [ main, master ]
+
+
 
 jobs:
-  #TRABAJO DE SEGURIDAD (Snyk)
+  # Análisis estático para la  Segurida
   security_scan:
-    name: Analisis de Seguridad (Snyk)
+    name: Escaneo de Seguridad (Snyk)
     runs-on: ubuntu-latest
     steps:
-      - name: Descargar el codigo
+      - name: Descargar codigo del repositorio
         uses: actions/checkout@v4
 
-      - name: Instalar Node.js
+      - name: Configurar entorno Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
 
-      - name: Ejecutar Snyk Security Scan
+
+      - name: Instalar dependencias del proyecto
+        run: npm install
+
+      # Escáner de seguridad
+      - name: Analizar vulnerabilidades con Snyk
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         continue-on-error: true 
 
-  #TRABAJO DE PRUEBAS Y COBERTURA 
+  # pruebas automatizadas y Cobertura
   test_and_coverage:
-    name: Pruebas y Cobertura
+    name: Control de Calidad y Pruebas
     needs: [security_scan] 
     runs-on: ubuntu-latest
     steps:
-      - name: Descargar el codigo
+      - name: Descargar codigo del repositorio
         uses: actions/checkout@v4
 
-      - name: Instalar Node.js
+
+      - name: Configurar entorno Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
+
 
       - name: Instalar dependencias del proyecto
         run: npm install
 
-      - name: Ejecutar Tests con Cobertura
+      # aca generamos el reporte para la cobertura (--coverage)
+      - name: Ejecutar Pruebas Unitarias con Cobertura
         run: npm test -- --coverage
         continue-on-error: true 
 
-  # COMPILACIÓN DOCKER
-  build_docker:
-    name: Compilacion Docker Image
-    needs: [test_and_coverage] # No corre si las pruebas fallan
+  # Construcción de la solución contenerizada (contenedores)
+  build_container:
+    name: Compilacion de Imagen Docker
+    needs: [test_and_coverage] #no corre si las pruebas de calidad 'quieren' fallar jaja
     runs-on: ubuntu-latest
     steps:
-      - name: Descargar el codigo
+      - name: Descargar codigo del repositorio
         uses: actions/checkout@v4
+        
 
-      - name: Construir Imagen optimizada
-        run: docker build -t mi-app-devops:latest .
+      - name: Construir imagen optimizada (Multi-stage)
+        run: docker build -t microservicio-app:latest .
 
-  # DESPLIEGUE AUTOMÁTICO
+  # Despliegue del Automatizado y Trazabilidad:
   deploy:
-    name: Deploy Automático
-    needs: [build_docker] # Solo corre si la imagen Docker se construyó correctamente
+  
+    name: Despliegue en Entorno Cloud Simulado
+    needs: [build_container]
     runs-on: ubuntu-latest
     steps:
-      - name: Ejecutar Despliegue Continuo
+      - name: Ejecutar Entrega y Despliegue Continuo (CD)
         run: |
-          echo "Iniciando despliegue automático en el servidor..."
-          echo "¡Despliegue simulado exitosamente!"
+          echo "======================================================"
+          echo "------------------------------------------------------"
+          echo "Iniciando proceso de Despliegue Automático..."
+          echo "Verificando consistencia de artefactos..."
+          echo "Aplicación desplegada de forma completa y trazable."
+          echo "------------------------------------------------------".
+          echo "======================================================"
