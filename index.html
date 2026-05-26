@@ -67,7 +67,6 @@ pre {
 <hr>
 <h2>Roadmap sugerido para alcanzar el 100%</h2>
 <ol>
-<li>Dockerfile existe</li>
 <li>SonarCloud/Snyk</li>
 <li>Bloqueos seguridad needs</li>
 <li>Deploy automático</li>
@@ -199,7 +198,22 @@ npm test -- --coverage
 <tbody><tr>
 <td>IE1</td>
 <td>Dockerfile existe</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+<tr>
+<td>IE1</td>
+<td>Multi-stage build</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+<tr>
+<td>IE1</td>
+<td>Imágenes optimizadas</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+<tr>
+<td>IE1</td>
+<td>Docker build funciona</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE4</td>
@@ -256,18 +270,48 @@ npm test -- --coverage
 <h2>Detalle validaciones</h2>
 <h3>IE1 - Dockerfile existe</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: Dockerfile no detectado</p>
+<li><p>Detalle: Dockerfile encontrado</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
-<pre><code>Dockerfile ausente
+<pre><code>Dockerfile
 </code></pre>
+<h3>IE1 - Multi-stage build</h3>
 <ul>
-<li>Qué falta: Crear Dockerfile</li>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: Usa multi-stage</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
 </ul>
+<pre><code>Dockerfile revisado
+</code></pre>
+<h3>IE1 - Imágenes optimizadas</h3>
+<ul>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: Usa imágenes optimizadas</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>Dockerfile revisado
+</code></pre>
+<h3>IE1 - Docker build funciona</h3>
+<ul>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: Docker build exitoso</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>-
+</code></pre>
 <h3>IE4 - Pipeline GitHub Actions</h3>
 <ul>
 <li><p>Estado: ✅ IMPLEMENTADO</p>

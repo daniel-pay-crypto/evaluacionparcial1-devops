@@ -13,13 +13,12 @@ Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio
 
 ## Roadmap sugerido para alcanzar el 100%
 
-1. Dockerfile existe
-2. SonarCloud/Snyk
-3. Bloqueos seguridad needs
-4. Deploy automático
-5. Coverage equivalente JaCoCo
-6. Dependabot configurado
-7. Docker Compose/K8s
+1. SonarCloud/Snyk
+2. Bloqueos seguridad needs
+3. Deploy automático
+4. Coverage equivalente JaCoCo
+5. Dependabot configurado
+6. Docker Compose/K8s
 
 ---
 
@@ -95,7 +94,10 @@ npm test -- --coverage
 
 | IE | Evaluación | Estado |
 |---|---|---|
-| IE1 | Dockerfile existe | ⚠️ MEJORA PENDIENTE |
+| IE1 | Dockerfile existe | ✅ IMPLEMENTADO |
+| IE1 | Multi-stage build | ✅ IMPLEMENTADO |
+| IE1 | Imágenes optimizadas | ✅ IMPLEMENTADO |
+| IE1 | Docker build funciona | ✅ IMPLEMENTADO |
 | IE4 | Pipeline GitHub Actions | ✅ IMPLEMENTADO |
 | IE2 | Pipeline ejecuta tests | ✅ IMPLEMENTADO |
 | IE3 | SonarCloud/Snyk | ⚠️ MEJORA PENDIENTE |
@@ -114,15 +116,46 @@ npm test -- --coverage
 
 ### IE1 - Dockerfile existe
 
-- Estado: ⚠️ MEJORA PENDIENTE
-- Detalle: Dockerfile no detectado
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Dockerfile encontrado
 
 - Evidencia:
 ```
-Dockerfile ausente
+Dockerfile
 ```
 
-- Qué falta: Crear Dockerfile
+
+### IE1 - Multi-stage build
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Usa multi-stage
+
+- Evidencia:
+```
+Dockerfile revisado
+```
+
+
+### IE1 - Imágenes optimizadas
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Usa imágenes optimizadas
+
+- Evidencia:
+```
+Dockerfile revisado
+```
+
+
+### IE1 - Docker build funciona
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Docker build exitoso
+
+- Evidencia:
+```
+-
+```
 
 
 ### IE4 - Pipeline GitHub Actions
