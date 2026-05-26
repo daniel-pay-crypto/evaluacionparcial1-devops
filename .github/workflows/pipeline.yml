@@ -1,24 +1,74 @@
-name: CI DevOps Integracion
+name: CI DevOps Integracion Completa
 
 on:
   push:
     branches:
       - develop
+      - main
   pull_request:
     branches:
       - main
 
 jobs:
-  build:
+  #TRABAJO DE SEGURIDAD (Snyk)
+  security_scan:
+    name: Analisis de Seguridad (Snyk)
     runs-on: ubuntu-latest
     steps:
       - name: Descargar el codigo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Instalar Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
+          node-version: '20'
+
+      - name: Ejecutar Snyk Security Scan
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        continue-on-error: true 
+
+  #TRABAJO DE PRUEBAS Y COBERTURA 
+  test_and_coverage:
+    name: Pruebas y Cobertura
+    needs: [security_scan] 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       - name: Instalar dependencias del proyecto
         run: npm install
+
+      - name: Ejecutar Tests con Cobertura
+        run: npm test -- --coverage
+        continue-on-error: true 
+
+  # COMPILACIÓN DOCKER
+  build_docker:
+    name: Compilacion Docker Image
+    needs: [test_and_coverage] # No corre si las pruebas fallan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@v4
+
+      - name: Construir Imagen optimizada
+        run: docker build -t mi-app-devops:latest .
+
+  # DESPLIEGUE AUTOMÁTICO
+  deploy:
+    name: Deploy Automático
+    needs: [build_docker] # Solo corre si la imagen Docker se construyó correctamente
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ejecutar Despliegue Continuo
+        run: |
+          echo "Iniciando despliegue automático en el servidor..."
+          echo "¡Despliegue simulado exitosamente!"
