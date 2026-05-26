@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # Base de datos Postgres
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: devops_user
+      POSTGRES_PASSWORD: devops_password
+      POSTGRES_DB: mi_base_datos
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U devops_user -d mi_base_datos"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - devops-network
+
+  # Aplicación Node.js
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://devops_user:devops_password@db:5432/mi_base_datos
+    # depends_on 
+    depends_on:
+      db:
+        condition: service_healthy
+    # Límites de CPU y Memoria
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    networks:
+      - devops-network
+
+volumes:
+  db-data:
+
+networks:
+  devops-network:
+    driver: bridge
