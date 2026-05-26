@@ -1,7 +1,9 @@
+
+
 version: '3.8'
 
 services:
-  # Base de datos Postgres
+  # Aca coloco el servicio de la Base de datos Postgres, Osea Múltiples servicios
   db:
     image: postgres:15-alpine
     environment:
@@ -10,6 +12,7 @@ services:
       POSTGRES_DB: mi_base_datos
     volumes:
       - db-data:/var/lib/postgresql/data
+    # Chequeo de la salud estructural (el Healthcheck)
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U devops_user -d mi_base_datos"]
       interval: 10s
@@ -17,8 +20,7 @@ services:
       retries: 5
     networks:
       - devops-network
-
-  # Aplicación Node.js
+      
   app:
     build:
       context: .
@@ -27,11 +29,11 @@ services:
       - "3000:3000"
     environment:
       DATABASE_URL: postgres://devops_user:devops_password@db:5432/mi_base_datos
-    # depends_on 
+    # depends_on condicional: espera a que la Base de datos  esté saludable antes de arrancar y  evitar problemas
     depends_on:
       db:
         condition: service_healthy
-    # Límites de CPU y Memoria
+    # Parámetros de fiabilidad: límites estrictos de CPU y Memoria
     deploy:
       resources:
         limits:
