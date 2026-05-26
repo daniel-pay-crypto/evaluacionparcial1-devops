@@ -72,7 +72,6 @@ pre {
 <li>Deploy automático</li>
 <li>Coverage equivalente JaCoCo</li>
 <li>Dependabot configurado</li>
-<li>Docker Compose/K8s</li>
 </ol>
 <hr>
 <h2>Cómo resolver los GAPs</h2>
@@ -258,7 +257,37 @@ npm test -- --coverage
 <tr>
 <td>IE5</td>
 <td>Docker Compose/K8s</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+<tr>
+<td>IE5</td>
+<td>Múltiples servicios</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+<tr>
+<td>IE5</td>
+<td>Healthchecks</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+<tr>
+<td>IE5</td>
+<td>Volumes</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+<tr>
+<td>IE5</td>
+<td>Networks</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+<tr>
+<td>IE3</td>
+<td>Limits CPU/MEM</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+<tr>
+<td>IE3</td>
+<td>Reservations CPU/MEM</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE4</td>
@@ -425,18 +454,81 @@ Keywords:
 </ul>
 <h3>IE5 - Docker Compose/K8s</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: No existe docker-compose</p>
+<li><p>Detalle: docker-compose encontrado</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
 <pre><code>docker-compose.yml
 </code></pre>
+<h3>IE5 - Múltiples servicios</h3>
 <ul>
-<li>Qué falta: Agregar docker-compose</li>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: 2 servicios</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
 </ul>
+<pre><code>db, app
+</code></pre>
+<h3>IE5 - Healthchecks</h3>
+<ul>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: Tiene healthchecks</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>docker-compose revisado
+</code></pre>
+<h3>IE5 - Volumes</h3>
+<ul>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: Tiene volumes</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>docker-compose revisado
+</code></pre>
+<h3>IE5 - Networks</h3>
+<ul>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: Tiene networks</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>docker-compose revisado
+</code></pre>
+<h3>IE3 - Limits CPU/MEM</h3>
+<ul>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: Tiene limits</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>docker-compose revisado
+</code></pre>
+<h3>IE3 - Reservations CPU/MEM</h3>
+<ul>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: Tiene reservations</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>docker-compose revisado
+</code></pre>
 <h3>IE4 - README documentado</h3>
 <ul>
 <li><p>Estado: ✅ IMPLEMENTADO</p>

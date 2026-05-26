@@ -18,7 +18,6 @@ Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio
 3. Deploy automático
 4. Coverage equivalente JaCoCo
 5. Dependabot configurado
-6. Docker Compose/K8s
 
 ---
 
@@ -106,7 +105,13 @@ npm test -- --coverage
 | IE2 | Tecnología detectada | ✅ IMPLEMENTADO |
 | IE2 | Coverage equivalente JaCoCo | ⚠️ MEJORA PENDIENTE |
 | IE3 | Dependabot configurado | ⚠️ MEJORA PENDIENTE |
-| IE5 | Docker Compose/K8s | ⚠️ MEJORA PENDIENTE |
+| IE5 | Docker Compose/K8s | ✅ IMPLEMENTADO |
+| IE5 | Múltiples servicios | ✅ IMPLEMENTADO |
+| IE5 | Healthchecks | ✅ IMPLEMENTADO |
+| IE5 | Volumes | ✅ IMPLEMENTADO |
+| IE5 | Networks | ✅ IMPLEMENTADO |
+| IE3 | Limits CPU/MEM | ✅ IMPLEMENTADO |
+| IE3 | Reservations CPU/MEM | ✅ IMPLEMENTADO |
 | IE4 | README documentado | ✅ IMPLEMENTADO |
 
 
@@ -266,15 +271,79 @@ Keywords:
 
 ### IE5 - Docker Compose/K8s
 
-- Estado: ⚠️ MEJORA PENDIENTE
-- Detalle: No existe docker-compose
+- Estado: ✅ IMPLEMENTADO
+- Detalle: docker-compose encontrado
 
 - Evidencia:
 ```
 docker-compose.yml
 ```
 
-- Qué falta: Agregar docker-compose
+
+### IE5 - Múltiples servicios
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: 2 servicios
+
+- Evidencia:
+```
+db, app
+```
+
+
+### IE5 - Healthchecks
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Tiene healthchecks
+
+- Evidencia:
+```
+docker-compose revisado
+```
+
+
+### IE5 - Volumes
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Tiene volumes
+
+- Evidencia:
+```
+docker-compose revisado
+```
+
+
+### IE5 - Networks
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Tiene networks
+
+- Evidencia:
+```
+docker-compose revisado
+```
+
+
+### IE3 - Limits CPU/MEM
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Tiene limits
+
+- Evidencia:
+```
+docker-compose revisado
+```
+
+
+### IE3 - Reservations CPU/MEM
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Tiene reservations
+
+- Evidencia:
+```
+docker-compose revisado
+```
 
 
 ### IE4 - README documentado
