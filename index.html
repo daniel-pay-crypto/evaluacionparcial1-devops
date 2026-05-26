@@ -59,44 +59,6 @@ pre {
 <h1>DEVOPS CONTINUOUS FEEDBACK</h1>
 <h2>Resumen ejecutivo</h2>
 <p>Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio.</p>
-<h3>🟠 Prioridad media</h3>
-<ul>
-<li>SonarCloud/Snyk</li>
-<li>Coverage equivalente JaCoCo</li>
-</ul>
-<hr>
-<h2>Roadmap sugerido para alcanzar el 100%</h2>
-<ol>
-<li>SonarCloud/Snyk</li>
-<li>Bloqueos seguridad needs</li>
-<li>Deploy automático</li>
-<li>Coverage equivalente JaCoCo</li>
-</ol>
-<hr>
-<h2>Cómo resolver los GAPs</h2>
-<h3>SonarCloud/Snyk</h3>
-<p>Impacto: No existe análisis automatizado seguridad.</p>
-<h4>Cómo resolver</h4>
-<ul>
-<li>Integrar SonarCloud</li>
-<li>Integrar Snyk</li>
-</ul>
-<h4>Ejemplo</h4>
-<pre><code>
-- name: SonarCloud Scan
-  uses: SonarSource/sonarcloud-github-action@master
-</code></pre>
-<h3>Coverage equivalente JaCoCo</h3>
-<p>Impacto: No existe medición de cobertura.</p>
-<h4>Cómo resolver</h4>
-<ul>
-<li>Agregar coverage</li>
-<li>Publicar cobertura pipeline</li>
-</ul>
-<h4>Ejemplo</h4>
-<pre><code>
-npm test -- --coverage
-</code></pre>
 <hr>
 <h2>Tabla evaluación</h2>
 <table>
@@ -226,17 +188,17 @@ npm test -- --coverage
 <tr>
 <td>IE3</td>
 <td>SonarCloud/Snyk</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE3</td>
 <td>Bloqueos seguridad needs</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE4</td>
 <td>Deploy automático</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE2</td>
@@ -246,7 +208,7 @@ npm test -- --coverage
 <tr>
 <td>IE2</td>
 <td>Coverage equivalente JaCoCo</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE3</td>
@@ -364,46 +326,37 @@ npm test -- --coverage
 </code></pre>
 <h3>IE3 - SonarCloud/Snyk</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: No tiene seguridad</p>
+<li><p>Detalle: Tiene seguridad</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
 <pre><code>Workflow revisado
 </code></pre>
-<ul>
-<li>Qué falta: Agregar Sonar/Snyk</li>
-</ul>
 <h3>IE3 - Bloqueos seguridad needs</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: No usa needs</p>
+<li><p>Detalle: Usa needs</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
 <pre><code>Workflow revisado
 </code></pre>
-<ul>
-<li>Qué falta: Agregar needs</li>
-</ul>
 <h3>IE4 - Deploy automático</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: No tiene deploy</p>
+<li><p>Detalle: Tiene deploy</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
 <pre><code>Workflow revisado
 </code></pre>
-<ul>
-<li>Qué falta: Agregar deploy automático</li>
-</ul>
 <h3>IE2 - Tecnología detectada</h3>
 <ul>
 <li><p>Estado: ✅ IMPLEMENTADO</p>
@@ -417,9 +370,9 @@ npm test -- --coverage
 </code></pre>
 <h3>IE2 - Coverage equivalente JaCoCo</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: Coverage NO detectado para node</p>
+<li><p>Detalle: Coverage detectado para node</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
@@ -434,9 +387,6 @@ Keywords:
 --coverage, collectCoverage, coverageThreshold, nyc, istanbul, jest
       
 </code></pre>
-<ul>
-<li>Qué falta: Agregar Jest Coverage / NYC</li>
-</ul>
 <h3>IE3 - Dependabot configurado</h3>
 <ul>
 <li><p>Estado: ✅ IMPLEMENTADO</p>

@@ -4,59 +4,6 @@
 
 Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio.
 
-### 🟠 Prioridad media
-
-- SonarCloud/Snyk
-- Coverage equivalente JaCoCo
-
----
-
-## Roadmap sugerido para alcanzar el 100%
-
-1. SonarCloud/Snyk
-2. Bloqueos seguridad needs
-3. Deploy automático
-4. Coverage equivalente JaCoCo
-
----
-
-## Cómo resolver los GAPs
-
-### SonarCloud/Snyk
-
-Impacto: No existe análisis automatizado seguridad.
-
-#### Cómo resolver
-
-- Integrar SonarCloud
-- Integrar Snyk
-
-#### Ejemplo
-
-```
-
-- name: SonarCloud Scan
-  uses: SonarSource/sonarcloud-github-action@master
-
-```
-
-### Coverage equivalente JaCoCo
-
-Impacto: No existe medición de cobertura.
-
-#### Cómo resolver
-
-- Agregar coverage
-- Publicar cobertura pipeline
-
-#### Ejemplo
-
-```
-
-npm test -- --coverage
-
-```
-
 ---
 
 ## Tabla evaluación
@@ -98,11 +45,11 @@ npm test -- --coverage
 | IE1 | Docker build funciona | ✅ IMPLEMENTADO |
 | IE4 | Pipeline GitHub Actions | ✅ IMPLEMENTADO |
 | IE2 | Pipeline ejecuta tests | ✅ IMPLEMENTADO |
-| IE3 | SonarCloud/Snyk | ⚠️ MEJORA PENDIENTE |
-| IE3 | Bloqueos seguridad needs | ⚠️ MEJORA PENDIENTE |
-| IE4 | Deploy automático | ⚠️ MEJORA PENDIENTE |
+| IE3 | SonarCloud/Snyk | ✅ IMPLEMENTADO |
+| IE3 | Bloqueos seguridad needs | ✅ IMPLEMENTADO |
+| IE4 | Deploy automático | ✅ IMPLEMENTADO |
 | IE2 | Tecnología detectada | ✅ IMPLEMENTADO |
-| IE2 | Coverage equivalente JaCoCo | ⚠️ MEJORA PENDIENTE |
+| IE2 | Coverage equivalente JaCoCo | ✅ IMPLEMENTADO |
 | IE3 | Dependabot configurado | ✅ IMPLEMENTADO |
 | IE5 | Docker Compose/K8s | ✅ IMPLEMENTADO |
 | IE5 | Múltiples servicios | ✅ IMPLEMENTADO |
@@ -186,41 +133,35 @@ Workflow revisado
 
 ### IE3 - SonarCloud/Snyk
 
-- Estado: ⚠️ MEJORA PENDIENTE
-- Detalle: No tiene seguridad
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Tiene seguridad
 
 - Evidencia:
 ```
 Workflow revisado
 ```
-
-- Qué falta: Agregar Sonar/Snyk
 
 
 ### IE3 - Bloqueos seguridad needs
 
-- Estado: ⚠️ MEJORA PENDIENTE
-- Detalle: No usa needs
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Usa needs
 
 - Evidencia:
 ```
 Workflow revisado
 ```
-
-- Qué falta: Agregar needs
 
 
 ### IE4 - Deploy automático
 
-- Estado: ⚠️ MEJORA PENDIENTE
-- Detalle: No tiene deploy
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Tiene deploy
 
 - Evidencia:
 ```
 Workflow revisado
 ```
-
-- Qué falta: Agregar deploy automático
 
 
 ### IE2 - Tecnología detectada
@@ -236,8 +177,8 @@ Archivos proyecto
 
 ### IE2 - Coverage equivalente JaCoCo
 
-- Estado: ⚠️ MEJORA PENDIENTE
-- Detalle: Coverage NO detectado para node
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Coverage detectado para node
 
 - Evidencia:
 ```
@@ -251,8 +192,6 @@ Keywords:
 --coverage, collectCoverage, coverageThreshold, nyc, istanbul, jest
       
 ```
-
-- Qué falta: Agregar Jest Coverage / NYC
 
 
 ### IE3 - Dependabot configurado
