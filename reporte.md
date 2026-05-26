@@ -1,0 +1,255 @@
+# DEVOPS CONTINUOUS FEEDBACK
+
+## Resumen ejecutivo
+
+Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio.
+
+### 🟠 Prioridad media
+
+- SonarCloud/Snyk
+- Coverage equivalente JaCoCo
+
+---
+
+## Roadmap sugerido para alcanzar el 100%
+
+1. Dockerfile existe
+2. SonarCloud/Snyk
+3. Bloqueos seguridad needs
+4. Deploy automático
+5. Coverage equivalente JaCoCo
+6. Dependabot configurado
+7. Docker Compose/K8s
+
+---
+
+## Cómo resolver los GAPs
+
+### SonarCloud/Snyk
+
+Impacto: No existe análisis automatizado seguridad.
+
+#### Cómo resolver
+
+- Integrar SonarCloud
+- Integrar Snyk
+
+#### Ejemplo
+
+```
+
+- name: SonarCloud Scan
+  uses: SonarSource/sonarcloud-github-action@master
+
+```
+
+### Coverage equivalente JaCoCo
+
+Impacto: No existe medición de cobertura.
+
+#### Cómo resolver
+
+- Agregar coverage
+- Publicar cobertura pipeline
+
+#### Ejemplo
+
+```
+
+npm test -- --coverage
+
+```
+
+---
+
+## Tabla evaluación
+
+
+| IE | Qué se revisará |
+|---|---|
+| IE1 | Dockerfile existe |
+| IE1 | Docker build funciona |
+| IE1 | Imágenes optimizadas |
+| IE1 | Multi-stage build |
+| IE2 | Existen tests |
+| IE2 | Pipeline ejecuta tests |
+| IE2 | Coverage equivalente JaCoCo |
+| IE3 | Dependabot configurado |
+| IE3 | SonarCloud/Snyk |
+| IE3 | Bloqueos seguridad needs |
+| IE3 | Limits CPU/MEM |
+| IE3 | Reservations CPU/MEM |
+| IE4 | Deploy automático |
+| IE4 | README documentado |
+| IE5 | Docker Compose/K8s |
+| IE5 | Múltiples servicios |
+| IE5 | Healthchecks |
+| IE5 | Volumes |
+| IE5 | Networks |
+
+
+---
+
+## Resultado revisión
+
+
+| IE | Evaluación | Estado |
+|---|---|---|
+| IE1 | Dockerfile existe | ⚠️ MEJORA PENDIENTE |
+| IE4 | Pipeline GitHub Actions | ✅ IMPLEMENTADO |
+| IE2 | Pipeline ejecuta tests | ✅ IMPLEMENTADO |
+| IE3 | SonarCloud/Snyk | ⚠️ MEJORA PENDIENTE |
+| IE3 | Bloqueos seguridad needs | ⚠️ MEJORA PENDIENTE |
+| IE4 | Deploy automático | ⚠️ MEJORA PENDIENTE |
+| IE2 | Tecnología detectada | ✅ IMPLEMENTADO |
+| IE2 | Coverage equivalente JaCoCo | ⚠️ MEJORA PENDIENTE |
+| IE3 | Dependabot configurado | ⚠️ MEJORA PENDIENTE |
+| IE5 | Docker Compose/K8s | ⚠️ MEJORA PENDIENTE |
+| IE4 | README documentado | ✅ IMPLEMENTADO |
+
+
+---
+
+## Detalle validaciones
+
+### IE1 - Dockerfile existe
+
+- Estado: ⚠️ MEJORA PENDIENTE
+- Detalle: Dockerfile no detectado
+
+- Evidencia:
+```
+Dockerfile ausente
+```
+
+- Qué falta: Crear Dockerfile
+
+
+### IE4 - Pipeline GitHub Actions
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: 2 workflow(s) detectados
+
+- Evidencia:
+```
+/home/runner/work/evaluacionparcial1-devops/evaluacionparcial1-devops/.github/workflows/pipeline.yml, /home/runner/work/evaluacionparcial1-devops/evaluacionparcial1-devops/.github/workflows/ep02-devops-continuous-feedback.yml
+```
+
+
+### IE2 - Pipeline ejecuta tests
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Ejecuta tests
+
+- Evidencia:
+```
+Workflow revisado
+```
+
+
+### IE3 - SonarCloud/Snyk
+
+- Estado: ⚠️ MEJORA PENDIENTE
+- Detalle: No tiene seguridad
+
+- Evidencia:
+```
+Workflow revisado
+```
+
+- Qué falta: Agregar Sonar/Snyk
+
+
+### IE3 - Bloqueos seguridad needs
+
+- Estado: ⚠️ MEJORA PENDIENTE
+- Detalle: No usa needs
+
+- Evidencia:
+```
+Workflow revisado
+```
+
+- Qué falta: Agregar needs
+
+
+### IE4 - Deploy automático
+
+- Estado: ⚠️ MEJORA PENDIENTE
+- Detalle: No tiene deploy
+
+- Evidencia:
+```
+Workflow revisado
+```
+
+- Qué falta: Agregar deploy automático
+
+
+### IE2 - Tecnología detectada
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: node
+
+- Evidencia:
+```
+Archivos proyecto
+```
+
+
+### IE2 - Coverage equivalente JaCoCo
+
+- Estado: ⚠️ MEJORA PENDIENTE
+- Detalle: Coverage NO detectado para node
+
+- Evidencia:
+```
+
+Tecnología: node
+
+Coverage esperado:
+Jest Coverage / NYC
+
+Keywords:
+--coverage, collectCoverage, coverageThreshold, nyc, istanbul, jest
+      
+```
+
+- Qué falta: Agregar Jest Coverage / NYC
+
+
+### IE3 - Dependabot configurado
+
+- Estado: ⚠️ MEJORA PENDIENTE
+- Detalle: Dependabot no detectado
+
+- Evidencia:
+```
+.github/dependabot.yml
+```
+
+- Qué falta: Agregar dependabot.yml
+
+
+### IE5 - Docker Compose/K8s
+
+- Estado: ⚠️ MEJORA PENDIENTE
+- Detalle: No existe docker-compose
+
+- Evidencia:
+```
+docker-compose.yml
+```
+
+- Qué falta: Agregar docker-compose
+
+
+### IE4 - README documentado
+
+- Estado: ✅ IMPLEMENTADO
+- Detalle: README encontrado
+
+- Evidencia:
+```
+README.md
+```

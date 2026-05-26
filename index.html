@@ -1,0 +1,411 @@
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+DevOps Continuous Feedback
+</title>
+
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background: #f5f5f5;
+  color: #222;
+}
+
+h1, h2, h3 {
+  color: #111;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #222;
+  color: white;
+}
+
+code {
+  background: #eee;
+  padding: 2px 4px;
+}
+
+pre {
+  background: #eee;
+  padding: 15px;
+  overflow-x: auto;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>DEVOPS CONTINUOUS FEEDBACK</h1>
+<h2>Resumen ejecutivo</h2>
+<p>Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio.</p>
+<h3>🟠 Prioridad media</h3>
+<ul>
+<li>SonarCloud/Snyk</li>
+<li>Coverage equivalente JaCoCo</li>
+</ul>
+<hr>
+<h2>Roadmap sugerido para alcanzar el 100%</h2>
+<ol>
+<li>Dockerfile existe</li>
+<li>SonarCloud/Snyk</li>
+<li>Bloqueos seguridad needs</li>
+<li>Deploy automático</li>
+<li>Coverage equivalente JaCoCo</li>
+<li>Dependabot configurado</li>
+<li>Docker Compose/K8s</li>
+</ol>
+<hr>
+<h2>Cómo resolver los GAPs</h2>
+<h3>SonarCloud/Snyk</h3>
+<p>Impacto: No existe análisis automatizado seguridad.</p>
+<h4>Cómo resolver</h4>
+<ul>
+<li>Integrar SonarCloud</li>
+<li>Integrar Snyk</li>
+</ul>
+<h4>Ejemplo</h4>
+<pre><code>
+- name: SonarCloud Scan
+  uses: SonarSource/sonarcloud-github-action@master
+</code></pre>
+<h3>Coverage equivalente JaCoCo</h3>
+<p>Impacto: No existe medición de cobertura.</p>
+<h4>Cómo resolver</h4>
+<ul>
+<li>Agregar coverage</li>
+<li>Publicar cobertura pipeline</li>
+</ul>
+<h4>Ejemplo</h4>
+<pre><code>
+npm test -- --coverage
+</code></pre>
+<hr>
+<h2>Tabla evaluación</h2>
+<table>
+<thead>
+<tr>
+<th>IE</th>
+<th>Qué se revisará</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IE1</td>
+<td>Dockerfile existe</td>
+</tr>
+<tr>
+<td>IE1</td>
+<td>Docker build funciona</td>
+</tr>
+<tr>
+<td>IE1</td>
+<td>Imágenes optimizadas</td>
+</tr>
+<tr>
+<td>IE1</td>
+<td>Multi-stage build</td>
+</tr>
+<tr>
+<td>IE2</td>
+<td>Existen tests</td>
+</tr>
+<tr>
+<td>IE2</td>
+<td>Pipeline ejecuta tests</td>
+</tr>
+<tr>
+<td>IE2</td>
+<td>Coverage equivalente JaCoCo</td>
+</tr>
+<tr>
+<td>IE3</td>
+<td>Dependabot configurado</td>
+</tr>
+<tr>
+<td>IE3</td>
+<td>SonarCloud/Snyk</td>
+</tr>
+<tr>
+<td>IE3</td>
+<td>Bloqueos seguridad needs</td>
+</tr>
+<tr>
+<td>IE3</td>
+<td>Limits CPU/MEM</td>
+</tr>
+<tr>
+<td>IE3</td>
+<td>Reservations CPU/MEM</td>
+</tr>
+<tr>
+<td>IE4</td>
+<td>Deploy automático</td>
+</tr>
+<tr>
+<td>IE4</td>
+<td>README documentado</td>
+</tr>
+<tr>
+<td>IE5</td>
+<td>Docker Compose/K8s</td>
+</tr>
+<tr>
+<td>IE5</td>
+<td>Múltiples servicios</td>
+</tr>
+<tr>
+<td>IE5</td>
+<td>Healthchecks</td>
+</tr>
+<tr>
+<td>IE5</td>
+<td>Volumes</td>
+</tr>
+<tr>
+<td>IE5</td>
+<td>Networks</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Resultado revisión</h2>
+<table>
+<thead>
+<tr>
+<th>IE</th>
+<th>Evaluación</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IE1</td>
+<td>Dockerfile existe</td>
+<td>⚠️ MEJORA PENDIENTE</td>
+</tr>
+<tr>
+<td>IE4</td>
+<td>Pipeline GitHub Actions</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+<tr>
+<td>IE2</td>
+<td>Pipeline ejecuta tests</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+<tr>
+<td>IE3</td>
+<td>SonarCloud/Snyk</td>
+<td>⚠️ MEJORA PENDIENTE</td>
+</tr>
+<tr>
+<td>IE3</td>
+<td>Bloqueos seguridad needs</td>
+<td>⚠️ MEJORA PENDIENTE</td>
+</tr>
+<tr>
+<td>IE4</td>
+<td>Deploy automático</td>
+<td>⚠️ MEJORA PENDIENTE</td>
+</tr>
+<tr>
+<td>IE2</td>
+<td>Tecnología detectada</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+<tr>
+<td>IE2</td>
+<td>Coverage equivalente JaCoCo</td>
+<td>⚠️ MEJORA PENDIENTE</td>
+</tr>
+<tr>
+<td>IE3</td>
+<td>Dependabot configurado</td>
+<td>⚠️ MEJORA PENDIENTE</td>
+</tr>
+<tr>
+<td>IE5</td>
+<td>Docker Compose/K8s</td>
+<td>⚠️ MEJORA PENDIENTE</td>
+</tr>
+<tr>
+<td>IE4</td>
+<td>README documentado</td>
+<td>✅ IMPLEMENTADO</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Detalle validaciones</h2>
+<h3>IE1 - Dockerfile existe</h3>
+<ul>
+<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+</li>
+<li><p>Detalle: Dockerfile no detectado</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>Dockerfile ausente
+</code></pre>
+<ul>
+<li>Qué falta: Crear Dockerfile</li>
+</ul>
+<h3>IE4 - Pipeline GitHub Actions</h3>
+<ul>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: 2 workflow(s) detectados</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>/home/runner/work/evaluacionparcial1-devops/evaluacionparcial1-devops/.github/workflows/pipeline.yml, /home/runner/work/evaluacionparcial1-devops/evaluacionparcial1-devops/.github/workflows/ep02-devops-continuous-feedback.yml
+</code></pre>
+<h3>IE2 - Pipeline ejecuta tests</h3>
+<ul>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: Ejecuta tests</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>Workflow revisado
+</code></pre>
+<h3>IE3 - SonarCloud/Snyk</h3>
+<ul>
+<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+</li>
+<li><p>Detalle: No tiene seguridad</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>Workflow revisado
+</code></pre>
+<ul>
+<li>Qué falta: Agregar Sonar/Snyk</li>
+</ul>
+<h3>IE3 - Bloqueos seguridad needs</h3>
+<ul>
+<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+</li>
+<li><p>Detalle: No usa needs</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>Workflow revisado
+</code></pre>
+<ul>
+<li>Qué falta: Agregar needs</li>
+</ul>
+<h3>IE4 - Deploy automático</h3>
+<ul>
+<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+</li>
+<li><p>Detalle: No tiene deploy</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>Workflow revisado
+</code></pre>
+<ul>
+<li>Qué falta: Agregar deploy automático</li>
+</ul>
+<h3>IE2 - Tecnología detectada</h3>
+<ul>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: node</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>Archivos proyecto
+</code></pre>
+<h3>IE2 - Coverage equivalente JaCoCo</h3>
+<ul>
+<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+</li>
+<li><p>Detalle: Coverage NO detectado para node</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>
+Tecnología: node
+
+Coverage esperado:
+Jest Coverage / NYC
+
+Keywords:
+--coverage, collectCoverage, coverageThreshold, nyc, istanbul, jest
+      
+</code></pre>
+<ul>
+<li>Qué falta: Agregar Jest Coverage / NYC</li>
+</ul>
+<h3>IE3 - Dependabot configurado</h3>
+<ul>
+<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+</li>
+<li><p>Detalle: Dependabot no detectado</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>.github/dependabot.yml
+</code></pre>
+<ul>
+<li>Qué falta: Agregar dependabot.yml</li>
+</ul>
+<h3>IE5 - Docker Compose/K8s</h3>
+<ul>
+<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+</li>
+<li><p>Detalle: No existe docker-compose</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>docker-compose.yml
+</code></pre>
+<ul>
+<li>Qué falta: Agregar docker-compose</li>
+</ul>
+<h3>IE4 - README documentado</h3>
+<ul>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
+</li>
+<li><p>Detalle: README encontrado</p>
+</li>
+<li><p>Evidencia:</p>
+</li>
+</ul>
+<pre><code>README.md
+</code></pre>
+
+
+</body>
+
+</html>
