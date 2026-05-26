@@ -26,5 +26,17 @@ Utilizamos un estándar para mantener la trazabilidad del proyecto:
 3. Se debe abrir un **Pull Request (PR)** hacia la rama de destino (`develop` para features, `main` y `develop` para hotfixes).
 4. El Pull Request debe ser revisado por el otro miembro del equipo antes de aprobar el *merge*.
 
+--------------------------------------------------------------------------------------------------
+## Implementacio de las nuevas mejora en seguridad y fiabilidad de DevOps segun la evaluacion Parcial 2
+
+#### 1. Control de las vulnerabilidades y DevSecOps
+**Snyk security Scan:** Lo integre directamente en mi Pipeline de automatizacion para que realize un analisis estatico de dependencias ANTES de cualquier empaquetado y bloqueando despliegues inseguros de forma muy proactiva.
+**Dependabot automatizado:** configurado en la ruta `.github/dependabot.yml` asi realiza auditorias semanales en nuestro ecosistema de Node.js (NPM) para que alerte de manera automatica al equipo acerca de parches de seguridad criticos.
+
+### 2. Gestión de Recursos y Fiabilidad del Entorno (IE5 / IE3)
+En nuestro orquestador `docker-compose.yml`, limitamos de forma estricta los recursos consumidos por el microservicio (`cpus: '0.50'` y `memory: 512M`).
+- **Justificación Técnica:** Esta configuración previene el fenómeno del *"vecino ruidoso"* (un contenedor defectuoso o atacado que consume toda la infraestructura física). Al aislar los límites, garantizamos la alta disponibilidad de la base de datos y de los demás servicios indispensables del servidor.
+
+
 ---
-*Nota sobre uso de IA: Para la generación del código base del microservicio dummy nos apoyamos en la herramienta de IA Gemini, validando y adaptando posteriormente la información a los requerimientos de nuestro proyecto.*
+*Nota sobre uso de IA: Para la generación del código base del microservicio dummy nos apoyamos en la herramienta de IA Gemini, validando y adaptando posteriormente la información a los requerimientos de nuestro proyecto. Actualmente para esta prueba 2 me nos apoyamos en la IA para ayudarnos con el Dependabot y ayudarnos a redactar de manera mas tecnica el README.md*
